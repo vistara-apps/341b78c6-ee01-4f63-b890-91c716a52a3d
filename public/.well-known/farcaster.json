@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "ScoreStream",
+    "subtitle": "Built with Zara",
+    "description": "ScoreStream is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://341b78c6ee014f63b89091c716a52a3d-k2pq.vercel.app",
+    "splashImageUrl": "https://341b78c6ee014f63b89091c716a52a3d-k2pq.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://341b78c6ee014f63b89091c716a52a3d-k2pq.vercel.app/image.png",
+    "tagline": "ScoreStream",
+    "screenshotUrls": [
+      "https://341b78c6ee014f63b89091c716a52a3d-k2pq.vercel.app/screenshot.png",
+      "https://341b78c6ee014f63b89091c716a52a3d-k2pq.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://341b78c6ee014f63b89091c716a52a3d-k2pq.vercel.app/api/webhook"
+  }
+}

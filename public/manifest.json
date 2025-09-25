@@ -1,0 +1,14 @@
+{
+  "name": "ScoreStream",
+  "description": "ScoreStream is a Base Mini App built with Zara.",
+  "image": "https://dummyimage.com/1200x628/0a0b0d/ffffff.png&text=OG",
+  "external_url": "https://341b78c6-ee01-4f63-b890-91c716a52a3d.vercel.app",
+  "properties": {
+    "app": {
+      "name": "ScoreStream",
+      "description": "ScoreStream is a Base Mini App built with Zara.",
+      "url": "https://341b78c6-ee01-4f63-b890-91c716a52a3d.vercel.app",
+      "icon": "https://0co.to/images/zara-2.png"
+    }
+  }
+}
