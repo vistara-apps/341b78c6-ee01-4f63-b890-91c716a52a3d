@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default cyberpunk sports theme */
+  --color-bg: hsl(260, 30%, 8%);
+  --color-fg: hsl(260, 15%, 95%);
+  --color-accent: hsl(120, 100%, 50%);
+  --color-primary: hsl(260, 90%, 60%);
+  --color-surface: hsl(260, 25%, 12%);
+  --color-text-primary: hsl(0, 0%, 95%);
+  --color-text-secondary: hsl(0, 0%, 70%);
+}
+
+[data-theme="celo"] {
+  --color-bg: hsl(0, 0%, 0%);
+  --color-fg: hsl(0, 0%, 100%);
+  --color-accent: hsl(48, 96%, 67%);
+  --color-primary: hsl(48, 96%, 67%);
+  --color-surface: hsl(0, 0%, 5%);
+  --color-text-primary: hsl(0, 0%, 100%);
+  --color-text-secondary: hsl(0, 0%, 70%);
+}
+
+[data-theme="solana"] {
+  --color-bg: hsl(260, 50%, 10%);
+  --color-fg: hsl(0, 0%, 100%);
+  --color-accent: hsl(300, 100%, 70%);
+  --color-primary: hsl(260, 100%, 70%);
+  --color-surface: hsl(260, 40%, 15%);
+  --color-text-primary: hsl(0, 0%, 100%);
+  --color-text-secondary: hsl(0, 0%, 80%);
+}
+
+[data-theme="base"] {
+  --color-bg: hsl(220, 50%, 10%);
+  --color-fg: hsl(0, 0%, 95%);
+  --color-accent: hsl(220, 100%, 50%);
+  --color-primary: hsl(220, 100%, 50%);
+  --color-surface: hsl(220, 40%, 15%);
+  --color-text-primary: hsl(0, 0%, 95%);
+  --color-text-secondary: hsl(0, 0%, 75%);
+}
+
+[data-theme="coinbase"] {
+  --color-bg: hsl(220, 60%, 8%);
+  --color-fg: hsl(0, 0%, 95%);
+  --color-accent: hsl(220, 100%, 50%);
+  --color-primary: hsl(220, 100%, 50%);
+  --color-surface: hsl(220, 50%, 12%);
+  --color-text-primary: hsl(0, 0%, 95%);
+  --color-text-secondary: hsl(0, 0%, 75%);
+}
+
+@layer base {
+  * {
+    @apply border-gray-800;
+  }
+  
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Cyberpunk glow effects */
+  .glow-accent {
+    box-shadow: 0 0 10px var(--color-accent);
+  }
+
+  .glow-accent-strong {
+    box-shadow: 0 0 20px var(--color-accent), 0 0 40px var(--color-accent);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface bg-opacity-80 backdrop-blur-sm border border-accent border-opacity-20;
+  }
+
+  .cyber-border {
+    position: relative;
+  }
+
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--color-accent), transparent, var(--color-accent));
+    border-radius: inherit;
+    padding: 1px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-accent to-primary text-bg px-6 py-3 font-bold uppercase tracking-wider hover:from-primary hover:to-accent transition-all duration-200 glow-accent;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+  }
+
+  .btn-secondary {
+    @apply bg-surface border border-accent text-accent px-6 py-3 font-bold uppercase tracking-wider hover:bg-accent hover:text-bg transition-all duration-200;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+  }
+
+  .score-card {
+    @apply glass-card p-4 hover:glow-accent-strong transition-all duration-200;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% calc(100% - 8px), 8px 100%, 0 100%);
+  }
+
+  .notification-item {
+    @apply glass-card p-3 border-l-4 border-l-accent hover:bg-opacity-100 transition-all duration-200 animate-slide-up;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px var(--color-accent);
+  }
+
+  .text-glow-strong {
+    text-shadow: 0 0 20px var(--color-accent), 0 0 40px var(--color-accent);
+  }
+}
